@@ -23,15 +23,18 @@ target_play = True
 
 while target_play:
     TARGET_LLEFT_X = random.randint(-400, 400)
-    TARGET_LLEFT_Y = random.randint(-350, 350)
+    TARGET_LLEFT_Y = random.randint(1, 350)
+    COLOR = random.choice(['red', 'blue', 'gray', 'cyan'])
 
     turtle.setup(SCREEN_WIDTH, SCREEN_HEIGHT)
     turtle.hideturtle()
     turtle.speed(0)
     turtle.penup()
 
+    turtle.fillcolor(COLOR)
+    turtle.begin_fill()
     turtle.goto(TARGET_LLEFT_X, TARGET_LLEFT_Y)
-    turtle.pensize(3)
+    turtle.pensize(0)
 
     turtle.pendown()
     turtle.setheading(EAST)
@@ -43,16 +46,17 @@ while target_play:
     turtle.forward(TARGET_WIDTH)
     turtle.setheading(SOUTH)
     turtle.forward(TARGET_WIDTH)
+    turtle.end_fill()
     turtle.penup()
 
-    turtle.goto(0, 0)
+    turtle.goto(0, -200)
     turtle.pensize(1)
     turtle.setheading(EAST)
     turtle.showturtle()
     turtle.speed(PROJECTILE_SPEED)
 
     angle = turtle.numinput("Angle", "Enter the Angle: ")
-    force = turtle.numinput("Projectile", "Enter a value in the range 1-15", default=7.5, minval=1, maxval=15)
+    force = turtle.numinput("Projectile", "Enter a value in the range 1-30", default=7.5, minval=1, maxval=30)
 
     distance = force * FORCE_FACTOR
 
