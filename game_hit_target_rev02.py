@@ -22,8 +22,8 @@ WEST = 180
 target_play = True
 
 while target_play:
-    TARGET_LLEFT_X = random.choice([100, 250, 300])
-    TARGET_LLEFT_Y = random.choice([200, 250, 350])
+    TARGET_LLEFT_X = random.randint(-400, 400)
+    TARGET_LLEFT_Y = random.randint(-350, 350)
 
     turtle.setup(SCREEN_WIDTH, SCREEN_HEIGHT)
     turtle.hideturtle()
